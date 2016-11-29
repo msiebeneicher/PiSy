@@ -9,7 +9,7 @@ config = {
     'url': 'https://github.com/msiebeneicher/PiSy',
     'download_url': 'https://github.com/msiebeneicher/PiSy/releases',
     'author_email': 'marc.siebeneicher@trivago.com ',
-    'version': '0.1.0',
+    'version': '0.2.0',
     'install_requires': [
         'PyYAML',
         'six'

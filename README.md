@@ -23,6 +23,14 @@ optional arguments:
 * PyYAML
 * six
 
+# Installation
+
+```sh
+# Install pisy v0.1.0
+wget https://github.com/msiebeneicher/PiSy/releases/download/v0.1.0/pisy-0.1.0-py2.7.egg
+easy_install pisy-0.1.0-py2.7.egg
+```
+
 ## Unittests
 
 Execute unittests by `./runtests,py`
