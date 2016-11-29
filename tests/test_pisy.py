@@ -39,6 +39,5 @@ class PiSyTestCase(unittest.TestCase):
         return os.path.join(base_path, 'mocks')
 
 
-
 if __name__ == '__main__':
     unittest.main()
