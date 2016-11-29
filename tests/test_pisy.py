@@ -8,9 +8,11 @@ from pisy.main import PiSy
 class PiSyTestCase(unittest.TestCase):
 
     def setUp(self):
-        base_path = self._get_mock_folder_dir()
-        self.source_path = '%s/source' % base_path
-        self.target_path = '%s/target' % base_path
+        self.source_path = '%s/source' % self._get_mock_folder_dir()
+        self.target_path = '/tmp/pisy_test_target'
+
+        if not os.path.isdir(self.target_path):
+            os.mkdir(self.target_path)
 
         sys.argv = ['pisy_path', self.source_path, self.target_path]
 
@@ -34,7 +36,7 @@ class PiSyTestCase(unittest.TestCase):
             )
         )
 
-        return os.path.join(base_path, 'mock_folder')
+        return os.path.join(base_path, 'mocks')
 
 
 
