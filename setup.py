@@ -12,7 +12,7 @@ config = {
     'version': '0.1.0',
     'install_requires': [
         'PyYAML',
-        'clint'
+        'six'
     ],
     'packages': ['pisy'],
     'scripts': [
