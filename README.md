@@ -18,6 +18,11 @@ optional arguments:
   -v          Verbosity
 ```
 
+## Requirements
+
+* PyYAML
+* six
+
 ## Unittests
 
 Execute unittests by `./runtests,py`
