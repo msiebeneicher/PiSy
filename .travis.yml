@@ -4,12 +4,12 @@ python:
 # command to install dependencies
 install: "pip install -r requirements.txt"
 # command to run tests
-script: coverage run runtests.py
+script: runtests.py
 
-before_script:
-  - pip install coverage
+#before_script:
+#  - pip install coverage
 
-after_script:
-  - pip install scrutinizer-ocular
-  - coverage xml -i
-  - ocular --data-file "coverage.xml" #--config-file ".coveragerc"
+#after_script:
+#  - pip install scrutinizer-ocular
+#  - coverage xml -i
+#  - ocular --data-file "coverage.xml" #--config-file ".coveragerc"

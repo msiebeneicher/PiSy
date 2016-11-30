@@ -3,14 +3,24 @@ tools:
         python_version: 2     # Possible values: 2, 3
         #config_file: '.pylintrc'
 
-    external_code_coverage:
-        timeout: 600   # How long should we wait for code coverage (in seconds).
-        runs: 1        # In how many runs have you split your tests?
+    #external_code_coverage:
+    #    timeout: 300   # How long should we wait for code coverage (in seconds).
+    #    runs: 1        # In how many runs have you split your tests?
 
 filter:
     excluded_paths:
         - tests/*
         - runtests.py
+
+build:
+    tests:
+        override:
+          -
+            command: './runtests.py'
+            coverage:
+              file: '.coverage'
+              #config_file: '.coveragerc'
+              format: 'py-cc'
 
 checks:
     python:
