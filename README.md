@@ -1,4 +1,4 @@
-# PiSy [![Build Status](https://travis-ci.org/msiebeneicher/PiSy.svg?branch=master)](https://travis-ci.org/msiebeneicher/PiSy)
+# PiSy [![Build Status](https://travis-ci.org/msiebeneicher/PiSy.svg?branch=master)](https://travis-ci.org/msiebeneicher/PiSy) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/msiebeneicher/PiSy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/msiebeneicher/PiSy/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/msiebeneicher/PiSy/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/msiebeneicher/PiSy/?branch=master)
 
 salt pillar sync tool for easy synchronization of secret pillars with dummy values
 
