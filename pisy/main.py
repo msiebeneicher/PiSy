@@ -75,7 +75,11 @@ class PiSy(object):
                     stream.write('# no values')
                     stream.close()
 
-    def _replace_secret_values(self, dictionary, replace='PiSy_DUMMY_SECRET_MOCK'):
+    def _replace_secret_values(
+            self,
+            dictionary,
+            replace='PiSy_DUMMY_SECRET_MOCK'
+    ):
         """
         loop through dict and replace final string values recursively
         :param dictionary:dict
@@ -120,10 +124,10 @@ class PiSy(object):
                 content = stream.read()
                 replaced = self._replace_jinja(content)
 
-                try:
-                    result_dict[file_key] = yaml.load(replaced)
-                except yaml.YAMLError as exc:
-                    print(exc)
+            try:
+                result_dict[file_key] = yaml.load(replaced)
+            except yaml.YAMLError as exc:
+                self.logger.error(exc)
 
         return result_dict
 
