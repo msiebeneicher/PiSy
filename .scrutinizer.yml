@@ -20,7 +20,7 @@ build:
     tests:
         override:
           -
-            command: './runtests.py'
+            command: 'coverage run ./runtests.py'
             coverage:
               file: '.coverage'
               #config_file: '.coveragerc'
