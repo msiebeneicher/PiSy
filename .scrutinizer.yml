@@ -13,6 +13,10 @@ filter:
         - runtests.py
 
 build:
+    dependencies:
+        before:
+            - pip install coverage
+
     tests:
         override:
           -
