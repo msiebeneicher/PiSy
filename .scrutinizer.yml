@@ -94,8 +94,6 @@ checks:
         format_line_too_long:
             max_length: '80'
         format_bad_whitespace: true
-        format_bad_indentation:
-            indentation: tab
         format_backtick: true
         exceptions_raising_string: true
         exceptions_raising_non_exception: true

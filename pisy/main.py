@@ -1,4 +1,5 @@
 #!/usr/bin/env python2
+# -*- coding: utf-8 -*-
 
 import glob
 import os
@@ -17,6 +18,9 @@ def main():
 
 
 class PiSy(object):
+    """
+    PiSy main class
+    """
     def __init__(self):
         self.cli = Cli()
         self.logger = Logger(
@@ -39,9 +43,9 @@ class PiSy(object):
 
         files = self._get_sls_files(dir_path)
 
-        for file in files:
-            self.logger.info('remove "%s"' % file)
-            os.remove(file)
+        for file_path in files:
+            self.logger.info('remove "%s"' % file_path)
+            os.remove(file_path)
 
     def _write_target_files(self, sources):
         """
@@ -71,30 +75,30 @@ class PiSy(object):
                     stream.write('# no values')
                     stream.close()
 
-    def _replace_secret_values(self, d, replace = 'PiSy_DUMMY_SECRET_MOCK'):
+    def _replace_secret_values(self, dictionary, replace='PiSy_DUMMY_SECRET_MOCK'):
         """
         loop through dict and replace final string values recursively
-        :param d:
-        :param replace:
+        :param dictionary:dict
+        :param replace:string
         :return: dict
         """
-        if d is None:
-            return d
+        if dictionary is None:
+            return dictionary
 
         result = dict()
-        for k, v in d.iteritems():
-            if isinstance(v, dict):
-                result[k] = self._replace_secret_values(v)
-            elif isinstance(v, list):
-                result[k] = []
-                for _ in v:
-                    result[k].append(replace)
-            elif isinstance(v, tuple):
-                result[k] = tuple(replace for n in v)
-            elif isinstance(v, six.string_types):
-                result[k] = replace
+        for key, value in dictionary.iteritems():
+            if isinstance(value, dict):
+                result[key] = self._replace_secret_values(value)
+            elif isinstance(value, list):
+                result[key] = []
+                for _ in value:
+                    result[key].append(replace)
+            elif isinstance(value, tuple):
+                result[key] = tuple(replace for n in value)
+            elif isinstance(value, six.string_types):
+                result[key] = replace
             else:
-                result[k] = v
+                result[key] = value
 
         return result
 
