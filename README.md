@@ -33,4 +33,4 @@ easy_install pisy-0.1.0-py2.7.egg
 
 ## Unittests
 
-Execute unittests by `./runtests,py`
+Execute unittests by `./runtests.py`
